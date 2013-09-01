@@ -1,0 +1,23 @@
+Next Generation Middleware for Distributed Exascale Computing
+Infrastructure: The Role of Modeling and Simulation
+
+Abstract: 
+
+Distributed Exascale Computing (DEC) is an important complementary and
+synergistic pathway to deliver science at the exascale.  The
+integration between single leadership machines and larger number of
+less powerful machines is necessary to promote efficient resource
+utilization and support multi-phase applications. Enabling a
+multi-level solution that integrates adaptive applications and dynamic
+resource management capabilities at extreme-scales is laden with many
+challenges, some of which can be addressed by a fresh perspective to
+distributed middleware. For example, there is a need to move beyond
+middleware that only supports simple execution of jobs to one that has
+first-class support for well-defined "capabilities" and "enables
+reasoning about whether to distribute a workload or not, and if so,
+how and when to distribute?”. We will derive and outline some
+properties of such a "next-generation middleware" for DEC, sketch a
+possible architecture and discuss the role of simulation and modeling
+at each layer of the middleware stack.
+ 
+
