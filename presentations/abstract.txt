@@ -17,7 +17,7 @@ first-class support for well-defined "capabilities" and "enables
 reasoning about whether to distribute a workload or not, and if so,
 how and when to distribute?”. We will derive and outline some
 properties of such a "next-generation middleware" for DEC, sketch a
-possible architecture and discuss the role of simulation and modeling
-at each layer of the middleware stack.
+possible model-based architecture and discuss the role of simulation
+and modeling at each layer of the middleware stack.
  
 
