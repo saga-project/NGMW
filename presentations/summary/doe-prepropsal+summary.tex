@@ -98,27 +98,31 @@
     % experimental facilities such as APS and ITER.
 
 \begin{abstract}
-  \footnotesize{Distributed Exascale Computing is an important
-    complementary\msnote{complementary to what?} and synergistic pathway to deliver science at the
+  \footnotesize{Distributed Exascale Computing will emerge as an
+    important and synergistic pathway to deliver science at the
     exascale. As an illustrative example, the integration between
     single leadership machines and larger number of less-powerful
     machines is necessary to promote efficient resource utilization
-    and support many applications. In order to leverage existing DOE
+    and support many applications. In order to leverage existing DoE
     investments in leadership-class systems and multi-level solutions
     that integrate adaptive applications and dynamic resource
     management capabilities at extreme-scales, novel middleware
     constructs that go beyond the current state-of-the-art are
     required.  For example, there is a need to move beyond middleware
     that only supports simple interoperable execution of jobs to one
-    that has first-class support for well-defined {\it capabilities},
-    viz., predictable performance and functional properties, and which
-    enable reasoning about workload distribution -- whether, how and
-    when to distribute? \msnote{I can't parse this last sentence, too many
-    constructs} We propose to research, design and prototype
-    middleware for distributed exascale computing infrastructure that
-    will support current and future DoE Science missions, including
-    but not limited to high-energy physics, climate modeling and
-    bioinformatics.}
+    that has first-class support for well-defined and predictable
+    performance and functional properties. Furthermore, middleware
+    constructs
+    % well-defined {\it capabilities},
+%     viz., predictable performance and functional properties, and which
+    should enable reasoning about workload distribution -- whether,
+    how and when to distribute?
+    % \msnote{I can't parse this last
+    %   sentence, too many constructs}
+    We propose to research, design and prototype middleware for
+    distributed exascale computing infrastructure that will support
+    current and future DoE Science missions, including but not limited
+    to high-energy physics, climate modeling and bioinformatics.}
 \end{abstract}
 
 
@@ -129,39 +133,44 @@ the exaflops region, there are many reasons to believe that
 Distributed Exascale Computing (DEC) is an important complementary and
 synergistic pathway to deliver science at the exascale.  DEC includes
 approaches that require the coupling of exaflop computing to
-processing exabytes of data which are often distributed by nature, as well as
-the integration between single leadership machines and larger number
-of less powerful machines. The importance of DEC has been noted in DOE
-reports~\cite{dmav-exa}, as well as the International Exascale
+processing exabytes of data which are often distributed by nature, as
+well as the integration between single leadership machines and larger
+number of less powerful machines. The importance of DEC has been noted
+in DOE reports~\cite{dmav-exa}, as well as the International Exascale
 Software Project Roadmap~\cite{iespr}.
 
 %Ref~\cite{iespr} identifies support for external environments as a
 %core function of systems management.
 
-Supercomputing class applications as those under development for the Square
-Kilometer Array (SKA), the Large Synoptic Survey Telescope (LSST), or for the
-next generation of combustion, high-energy physics (e.g. ATLAS) and
-bioinformatics are becoming increasingly complex, multi-component, and reliant
-upon federating distributed data sources in workflows that span machine size
-and scales.  In this scenario, the federation of single leadership machines and
-larger number of less powerful machines is necessary to promote efficient
-resource utilization.  In addition to computational science applications, DOE
-experimental facilities (e.g., Advanced Photon Source) are emerging as other
-major source of data (often at rates of hundreds of terabytes per day).
-Scientific progress using these next-generation experimental facilities is
-predicated upon efficient distribution of their data and the ability to support
-large-scale and often real-time analysis.  In conjunction with the
-aforementioned reports and analysis %~\cite{ascr-wp,3dpas-wp} of DOE relevant
-applications, it can be inferred that \mtnote{The sentence from here on is
-fairly complex to follow. After three readings I managed to understand the
-whole of it and I do agree with it. I would unpack it, maybe something on like:
-'scalable capabilities are required in order to couple exaflops of computing
-with exabytes of data. Such a coupling will support novel data analysis and
-collaboration therefore fostering scientific discovery.'} scalable capabilities
-that enable flexible modes of coupling of exaflops of computing with exabytes
-of data are required to support novel data analysis and collaboration and
-thereby scientific discovery\msnote{Does scalability enable flexibility or the
-other way around?}.
+Supercomputing class applications as those under development for the
+Square Kilometer Array, the Large Synoptic Survey Telescope
+(LSST), or for the next generation of combustion, high-energy physics
+(e.g. ATLAS) and bioinformatics are becoming increasingly complex,
+multi-component, and reliant upon federating distributed data sources
+in workflows that span machine size and scales.  In this scenario, the
+federation of single leadership machines and larger number of less
+powerful machines is necessary to promote efficient resource
+utilization.  In addition to computational science applications, DOE
+experimental facilities (e.g., Advanced Photon Source) are emerging as
+other major source of data (often at rates of hundreds of terabytes
+per day).  Scientific progress using these next-generation
+experimental facilities is predicated upon efficient distribution of
+their data and the ability to support large-scale and often real-time
+analysis.  In conjunction with the aforementioned reports and analysis
+applications, it can be inferred that scalable capabilities are
+required in order to couple exaflops of computing with exabytes of
+data. Such a coupling will support novel data analysis and
+collaboration therefore fostering scientific discovery.
+
+% \mtnote{The sentence from here on is fairly complex to follow. After
+%   three readings I managed to understand the whole of it and I do
+%   agree with it. I would unpack it, maybe something on like: ''}
+
+% scalable capabilities that enable flexible modes of coupling of
+% exaflops of computing with exabytes of data are required to support
+% novel data analysis and collaboration and thereby scientific
+% discovery\msnote{Does scalability enable flexibility or the other way
+%   around?}.
 
 % In addition, these abilities need to be integrated with the overall
 % infrastructure, so as to provide end-to-end data management and
@@ -169,25 +178,28 @@ other way around?}.
 % computation'' at the other.
 
 
-\noindent {\bf The Case for Next Generation Middleware for DEC: } The challenge
-in DEC is to support flexible execution and federation modes as well as to
-provide qualitatively novel abilities with well-defined and predictable
-performance and functional properties, which we refer to as capabilities.  This
-is not feasible by simply scaling existing approaches, as current middleware
-solutions essentially focus on the implementation of ``individual'' properties
-(e.g., jobs), and not on ``collective functional properties'' (e.g., number of
-jobs of specified functional requirement); this requires a fundamental rethink
-of the way we architect capabilities and federate resources.  Specifically, we
-find that there is a need for middleware that: (i) enables integrated 
-end-to-end functional properties presented to the application layer as 
-well-defined capabilities; (ii) provides first-class support for the coupling 
-of distributed data with compute, whilst exploiting advances in 
-data-cyberinfrastucture (such as file-systems, dynamic storage provisioning, 
-reliable data-transfers), and (iii) is responsive to spatio-temporal 
-variations at multiple-levels, namely fluctuating resources as well varying 
-applications properties, i.e. support dynamic resource and adaptive 
-application management\msnote{... dynamic resource management and adaptive 
-application execution?}.
+\noindent {\bf The Case for Next Generation Middleware for DEC: } The
+challenge in DEC is to support flexible execution and federation modes
+as well as to provide qualitatively novel abilities with well-defined
+and predictable performance and functional properties, which we refer
+to as capabilities.  This is not feasible by simply scaling existing
+approaches, as current middleware solutions essentially focus on the
+implementation of ``individual'' properties (e.g., jobs), and not on
+``collective functional properties'' (e.g., number of jobs of
+specified functional requirement); this requires a fundamental rethink
+of the way we architect capabilities and federate resources.
+Specifically, we find that there is a need for middleware that: (i)
+enables integrated end-to-end functional properties presented to the
+application layer as well-defined capabilities; (ii) provides
+first-class support for the coupling of distributed data with compute,
+whilst exploiting advances in data-cyberinfrastucture (such as
+file-systems, dynamic storage provisioning, reliable data-transfers),
+and (iii) is responsive to spatio-temporal variations at
+multiple-levels, namely fluctuating resources as well varying
+applications properties, i.e. support dynamic resource management and
+adaptive application execution.
+
+%\msnote{... dynamic resource and adaptive application execution?}.
 
 % whereby an abstraction of an element of the DEC landscape can be
 % modeled in more ways than one, and each of the models in turn can
@@ -203,49 +215,50 @@ research, design and prototype middleware that will
 % provide well-defined
 % capabilities % by integrating application workload
 % management and resource federation layers
-meet requirements (i) - (iii).  To this end, we will define, extend and refine
-several {\it conceptual} models that enable reasoning and help provide
-semantically consistent behaviour, as well as {\it   analytical} models that
-permit quantitative performance analysis. We will develop models for simplified
-(skeletal) applications, as well as models of workload generation and
-federation of resources.  Our model of an abstract simplified distributed
-application (A*) \msnote{I would remove simplified}, will enable reasoning
-about decomposition of an application into well-defined \mtnote{and possibly 
-correlated?} tasks into quantifiable
-workloads. The analytical model (W*) used to generate this workload from 
-well-defined tasks \msnote{Are tasks the input to this? Not sure ...}\mtnote{It 
-makes sense to me as the application outputs a set of tasks.} will be
-developed.  A qualitative model of infrastructure (I*) will be based upon a set
-of capabilities exposed by that infrastructure, \I{without} regards to its
-internal properties, or specific mechanisms that are used to provide these
-capabilities. We will develop a quantitative model (F*) of federating
-infrastructure such that they provide well-defined collective capabilities.
-Importantly these models will interface with each other -- syntactically and
-semantically, to guide multi-level reasoning to determine effective workload
-decomposition, distribution and placement.  Our work will build upon recent
-theoretical advances in models of pilot-abstractions (P*)~\cite{pstar}, which
-fundamentally supports and promotes both dynamic compute and data (access,
-storage, transfer) provisioning, which in turn builds upon the abstraction of
-affinity between distributed compute, data and computational
-resources\msnote{compute and computational?} \msnote{How about networking?}. In
-summary, we will use an abstractions-based and model-driven approach to provide
-well-defined capabilities by integrating application workload management and
-resource federation layers\msnote{I dont think we want to be intergrating them,
-do we?}.
+meet requirements (i) - (iii).  To this end, we will define, extend
+and refine several {\it conceptual} models that enable reasoning and
+help provide semantically consistent behaviour, as well as {\it
+  analytical} models that permit quantitative performance analysis. We
+will develop models for simplified (skeletal) applications, as well as
+models of workload generation and federation of resources.  Our model
+of an abstract distributed application (A*), will enable reasoning
+about decomposition of an application into well-defined and possibly
+correlated tasks. Analytical model (W*) which will be used to generate
+quantifiable workloads from these well-defined tasks.  A qualitative
+model of infrastructure (I*) will be based upon a set of capability
+units exposed by that infrastructure, \I{without} regards to its
+internal properties, or specific mechanisms that are used to provide
+these capabilities. We will develop a quantitative model (F*) of
+federating infrastructure such that they provide well-defined
+collective capabilities.  Importantly these models will interface with
+each other -- syntactically and semantically, to guide multi-level
+reasoning to determine effective workload decomposition, distribution
+and placement.  Our work will build upon recent theoretical advances
+in models of pilot-abstractions (P*)~\cite{pstar}, which fundamentally
+supports and promotes both dynamic compute and data (access, storage,
+transfer) provisioning, which in turn builds upon the abstraction of
+affinity between distributed compute, data and networking
+resources. In summary, we will use an abstractions-based and
+model-driven approach to provide well-defined capabilities by an
+integrated approach to application workload management and resource
+federation layers.
 
-\noindent {\bf Project Impact:} In addition to the DOE relevant applications
-alluded to, our middleware developments will support the execution requirements
-of novel, high-performance, data-intensive analysis libraries (think BigData
-equivalents to PETSc) \msnote{ref?}, as well as provide the distributed and
-dynamic resource federation capabilities workflow systems can utilize.  The
-conceptual and analytical models we will develop, will offer both qualitative
-and quantitative insight for simulating and predicting the end-to-end execution
-of a range of scientific workloads in a distributed exascale environment, as
-well as be used to provide well-defined middleware capabilities.\mtnote{I would
-consider whether to highlight that we are also proposing a paradigm shift from
-a notion of 'job' to one of 'capability unit' (or something like that). This is
-relevant as it changes the way we represent a workload and, potentially, also
-how users at the different levels of the stack conceive an application.}
+\noindent {\bf Project Impact:} In addition to the DoE relevant
+applications alluded to, our middleware developments will support the
+execution requirements of novel, high-performance, data-intensive
+analysis libraries (think BigData equivalents to PETSc), as well as
+provide the distributed and dynamic resource federation capabilities
+workflow systems can utilize.  The conceptual and analytical models we
+will develop, will offer both qualitative and quantitative insight for
+simulating and predicting the end-to-end execution of a range of
+scientific workloads in a distributed exascale environment, as well as
+be used to provide well-defined middleware capabilities.
+
+% \mtnote{I would consider whether to highlight that we are also
+%   proposing a paradigm shift from a notion of 'job' to one of
+%   'capability unit' (or something like that). This is relevant as it
+%   changes the way we represent a workload and, potentially, also how
+%   users at the different levels of the stack conceive an application.}
 
 \footnotesize
 
