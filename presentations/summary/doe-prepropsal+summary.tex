@@ -1,0 +1,242 @@
+\documentclass[11pt,final]{article}
+\usepackage{fullpage} % sets to default of 1 inch margin
+%\usepackage{uarial}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{color}
+\usepackage{pdfsync}
+\usepackage{authblk}
+\usepackage{fancyhdr}
+\usepackage[numbers, sort, compress]{natbib}
+\usepackage{xspace}
+\usepackage{mdwlist}
+\usepackage{wrapfig}
+\usepackage[small, compact]{titlesec}
+
+\usepackage{bibspacing}
+%\setlength{\bibspacing}{\baselineskip}
+
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+
+\newcommand{\doc}{Abstractions for D3 Applications and Systems at the Exascale}
+\newcommand{\myname}{Jha}
+
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyfoot{}
+%\fancyhead[CO,CE]{\lhead{\footnotesize \it \noindent{}\doc{} \hspace{0.5in} \hfill \myname \hfill}}
+%\renewcommand\headrulewidth{0.33pt}
+
+%\fancyhead[CO,CE]{\lhead{\footnotesize \hspace{3.0in} Jha Katz Weissman}}
+%\fancyfoot[CO,CE]{}
+%\fancyfoot[RO, LE] {\thepage}
+
+
+\usepackage{lscape}
+\usepackage{comment}
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+\parskip = 0.04in
+
+\newcommand{\projectnamefull} {\textit{Abstractions for D3
+    Applications and Systems at the Exascale} }
+
+\newcommand{\upup}{\vspace*{-0.5em}}
+\newcommand{\up}{\vspace*{-0.25em}}
+\newcommand{\I}[1]{\textit{#1}}
+\newcommand{\B}[1]{\textbf{#1}}
+\newcommand{\T}[1]{\texttt{#1}}
+\newcommand{\BI}[1]{\B{\I{#1}}}
+
+\newcommand{\yes}{$\bullet$}
+
+\long\def\finalcomment#1{{\bf \textcolor{red}{\bf #1}}}
+\newcommand{\CF}{\finalcomment}
+
+\newif\ifdraft
+%\drafttrue
+\ifdraft
+\newcommand{\katznote}[1]{ {\textcolor{magenta} { ***Dan: #1 }}}
+%\newcommand{\note}[1]{ {\textcolor{red} { #1 }}}
+\newcommand{\jhanote}[1]{ {\textcolor{blue} { ***Shantenu: #1 }}}
+\newcommand{\jonnote}[1]{ {\textcolor{red} { ***Jon: #1 }}}
+\else
+\newcommand{\katznote}[1]{}
+%\newcommand{\note}[1]{}
+\newcommand{\jhanote}[1]{}
+\newcommand{\jonnote}[1]{}
+\fi
+
+\hyphenation{Aspects}
+
+\begin{document}
+%\maketitle
+
+\vspace{0.25in}
+\noindent{\\
+{\bf Next Generation Middleware for Distributed Exascale
+    Computing Infrastructure}
+  \\
+
+\vspace{-0.2in}
+
+\begin{center}
+\line(1,0){250}
+\end{center}
+
+\vspace{-0.2in}
+   % We propose to provide middleware capabilities so as to support
+    % both traditional computational science applications, as
+    % well as increasingly important and data-intensive DOE
+    % experimental facilities such as APS and ITER.
+
+\begin{abstract}
+  \footnotesize{Distributed Exascale Computing is an important
+    complementary and synergistic pathway to deliver science at the
+    exascale. As an illustrative example, the integration between
+    single leadership machines and larger number of less-powerful
+    machines is necessary to promote efficient resource utilization
+    and support many applications. In order to leverage existing DOE
+    investments in leadership-class systems and multi-level solutions
+    that integrate adaptive applications and dynamic resource
+    management capabilities at extreme-scales, novel middleware
+    constructs that go beyond the current state-of-the-art are
+    required.  For example, there is a need to move beyond middleware
+    that only supports simple interoperable execution of jobs to one
+    that has first-class support for well-defined {\it capabilities},
+    viz., predictable performance and functional properties, and which
+    enable reasoning about workload distribution -- whether, how and
+    when to distribute? We propose to research, design and prototype
+    middleware for distributed exascale computing infrastructure that
+    will support current and future DoE Science missions, including
+    but not limited to high-energy physics, climate modeling and
+    bioinformatics.}
+\end{abstract}
+
+
+\noindent {\bf Introduction and Scope: }
+Although Exascale Computing usually refers to the technology of using
+a single tightly-coupled computing resource to deliver performance in
+the exaflops region, there are many reasons to believe that
+Distributed Exascale Computing (DEC) is an important complementary and
+synergistic pathway to deliver science at the exascale.  DEC includes
+approaches that require the coupling of exaflop computing to
+processing exabytes of data which are often distributed, as well as
+the integration between single leadership machines and larger number
+of less powerful machines. The importance of DEC has been noted in DOE
+reports~\cite{dmav-exa}, as well as the International Exascale
+Software Project Roadmap~\cite{iespr}.
+
+%Ref~\cite{iespr} identifies support for external environments as a
+%core function of systems management.
+
+Supercomputing class applications as those under development for the
+Square Kilometer Array (SKA), the Large Synoptic Survey Telescope
+(LSST), or for the next generation of combustion, high-energy physics
+(e.g. ATLAS) and bioinformatics are becoming increasingly complex,
+multi-component, and reliant upon federating distributed data sources
+in workflows that span machine size and scales.  In this scenario, the
+federation of single leadership machines and larger number of less
+powerful machines is necessary to promote efficient resource
+utilization.  In addition to computational science applications, DOE
+experimental facilities (e.g., Advanced Photon Source) are emerging as
+other major source of data (often at rates of hundreds of terabytes
+per day).  Scientific progress using these next-generation
+experimental facilities is predicated upon efficient distribution of
+their data and the ability to support large-scale and often real-time
+analysis.  In conjunction with the aforementioned reports and
+analysis %~\cite{ascr-wp,3dpas-wp}
+of DOE relevant applications, it can be inferred that scalable
+capabilities that enable flexible modes of coupling of exaflops of
+computing with exabytes of data are required to support novel data
+analysis and collaboration and thereby scientific discovery.
+
+% In addition, these abilities need to be integrated with the overall
+% infrastructure, so as to provide end-to-end data management and
+% movement on the one hand, with co-scheduling of analysis and ``main
+% computation'' at the other.
+
+
+\noindent {\bf The Case for Next Generation Middleware for DEC: }
+The challenge in DEC is to support flexible execution and federation
+modes as well as to provide qualitatively novel abilities with
+well-defined and predictable performance and functional properties,
+which we refer to as capabilities.  This is not feasible by simply
+scaling existing approaches, as current middleware solutions
+essentially focus on the implementation of ``individual'' properties
+(e.g., jobs), and not on ``collective functional properties'' (e.g.,
+number of jobs of specified functional requirement); this requires a
+fundamental rethink of the way we architect capabilities and federate
+resources.  Specifically, we find that there is a need for middleware
+that: (i) enables integrated end-to-end functional properties
+presented to the application layer as well-defined capabilities; (ii)
+provides first-class support for the coupling of distributed data with
+compute, whilst exploiting advances in data-cyberinfrastucture (such
+as file-systems, dynamic storage provisioning, reliable
+data-transfers), and (iii) is responsive to spatio-temporal variations
+at multiple-levels, namely fluctuating resources as well varying
+applications properties, i.e. support dynamic resource and adaptive
+application management.
+
+% whereby an abstraction of an element of the DEC landscape can be
+% modeled in more ways than one, and each of the models in turn can
+% have multiple implementations.  Specifically, we will develop both
+% Conceptual and Analytical.  (which guide reasoning and
+% implementation designs) and analytical models
+
+% \noindent {\bf Project Plan: Middleware for Exascale Distributed
+%   Computing Infrastructure: } 
+
+\noindent {\bf Project Plan:} The objective of this project is to
+research, design and prototype middleware that will
+% provide well-defined
+% capabilities % by integrating application workload
+% management and resource federation layers
+meet requirements (i) - (iii).  To this end, we will define, extend
+and refine several {\it conceptual} models that enable reasoning and
+help provide semantically consistent behaviour, as well as {\it
+  analytical} models that permit quantitative performance analysis.
+We will develop models for simplified (skeletal) applications, as well
+as models of workload generation and federation of resources.  Our
+model of an abstract simplified distributed application (A*), will
+enable reasoning about decomposition of an application into
+well-defined tasks into quantifiable workloads. The analytical model
+(W*) used to generate this workload from well-defined tasks will be
+developed.  A qualitative model of infrastructure (I*) will be based
+upon a set of capabilities exposed by that infrastructure, \I{without}
+regards to its internal properties, or specific mechanisms that are
+used to provide these capabilities. We will develop a quantitative
+model (F*) of federating infrastructure such that they provide
+well-defined collective capabilities.  Importantly these models will
+interface with each other -- syntactically and semantically, to guide
+multi-level reasoning to determine effective workload decomposition,
+distribution and placement.  Our work will build upon recent
+theoretical advances in models of pilot-abstractions
+(P*)~\cite{pstar}, which fundamentally supports and promotes both
+dynamic compute and data (access, storage, transfer) provisioning,
+which in turn builds upon the abstraction of affinity between
+distributed compute, data and computational resources. In summary, we
+will use an abstractions-based and model-driven approach to provide
+well-defined capabilities by integrating application workload
+management and resource federation layers.
+
+\noindent {\bf Project Impact:} In addition to the DOE relevant
+applications alluded to, our middleware developments will support the
+execution requirements of novel, high-performance, data-intensive
+analysis libraries (think BigData equivalents to PETSc), as well as
+provide the distributed and dynamic resource federation capabilities
+workflow systems can utilize.  The conceptual and analytical models we
+will develop, will offer both qualitative and quantitative insight for
+simulating and predicting the end-to-end execution of a range of
+scientific workloads in a distributed exascale environment, as well as
+be used to provide well-defined middleware capabilities.
+
+\footnotesize
+
+\bibliographystyle{unsrt}
+\bibliography{doe-ecrp}
+\end{document}
+
