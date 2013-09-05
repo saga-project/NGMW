@@ -57,17 +57,19 @@
 \newcommand{\CF}{\finalcomment}
 
 \newif\ifdraft
-%\drafttrue
+\drafttrue
 \ifdraft
 \newcommand{\katznote}[1]{ {\textcolor{magenta} { ***Dan: #1 }}}
 %\newcommand{\note}[1]{ {\textcolor{red} { #1 }}}
 \newcommand{\jhanote}[1]{ {\textcolor{blue} { ***Shantenu: #1 }}}
 \newcommand{\jonnote}[1]{ {\textcolor{red} { ***Jon: #1 }}}
+\newcommand{\msnote}[1]{ {\textcolor{green} { ***Mark: #1 }}}
 \else
 \newcommand{\katznote}[1]{}
 %\newcommand{\note}[1]{}
 \newcommand{\jhanote}[1]{}
 \newcommand{\jonnote}[1]{}
+\newcommand{\msnote}[1]{}
 \fi
 
 \hyphenation{Aspects}
@@ -95,7 +97,7 @@
 
 \begin{abstract}
   \footnotesize{Distributed Exascale Computing is an important
-    complementary and synergistic pathway to deliver science at the
+    complementary\msnote{complementary to what?} and synergistic pathway to deliver science at the
     exascale. As an illustrative example, the integration between
     single leadership machines and larger number of less-powerful
     machines is necessary to promote efficient resource utilization
@@ -109,7 +111,8 @@
     that has first-class support for well-defined {\it capabilities},
     viz., predictable performance and functional properties, and which
     enable reasoning about workload distribution -- whether, how and
-    when to distribute? We propose to research, design and prototype
+    when to distribute? \msnote{I can't parse this last sentence, too many
+    constructs} We propose to research, design and prototype
     middleware for distributed exascale computing infrastructure that
     will support current and future DoE Science missions, including
     but not limited to high-energy physics, climate modeling and
@@ -124,7 +127,7 @@ the exaflops region, there are many reasons to believe that
 Distributed Exascale Computing (DEC) is an important complementary and
 synergistic pathway to deliver science at the exascale.  DEC includes
 approaches that require the coupling of exaflop computing to
-processing exabytes of data which are often distributed, as well as
+processing exabytes of data which are often distributed by nature, as well as
 the integration between single leadership machines and larger number
 of less powerful machines. The importance of DEC has been noted in DOE
 reports~\cite{dmav-exa}, as well as the International Exascale
@@ -152,7 +155,8 @@ analysis %~\cite{ascr-wp,3dpas-wp}
 of DOE relevant applications, it can be inferred that scalable
 capabilities that enable flexible modes of coupling of exaflops of
 computing with exabytes of data are required to support novel data
-analysis and collaboration and thereby scientific discovery.
+analysis and collaboration and thereby scientific discovery\msnote{Does
+scalability enable flexibility or the other way around?}.
 
 % In addition, these abilities need to be integrated with the overall
 % infrastructure, so as to provide end-to-end data management and
@@ -179,7 +183,8 @@ as file-systems, dynamic storage provisioning, reliable
 data-transfers), and (iii) is responsive to spatio-temporal variations
 at multiple-levels, namely fluctuating resources as well varying
 applications properties, i.e. support dynamic resource and adaptive
-application management.
+application management\msnote{... dynamic resource management and adaptive
+application execution?}.
 
 % whereby an abstraction of an element of the DEC landscape can be
 % modeled in more ways than one, and each of the models in turn can
@@ -201,10 +206,12 @@ help provide semantically consistent behaviour, as well as {\it
   analytical} models that permit quantitative performance analysis.
 We will develop models for simplified (skeletal) applications, as well
 as models of workload generation and federation of resources.  Our
-model of an abstract simplified distributed application (A*), will
+model of an abstract simplified distributed application (A*) \msnote{I would
+remove simplified}, will
 enable reasoning about decomposition of an application into
 well-defined tasks into quantifiable workloads. The analytical model
-(W*) used to generate this workload from well-defined tasks will be
+(W*) used to generate this workload from well-defined tasks \msnote{Are tasks
+the input to this? Not sure ...} will be
 developed.  A qualitative model of infrastructure (I*) will be based
 upon a set of capabilities exposed by that infrastructure, \I{without}
 regards to its internal properties, or specific mechanisms that are
@@ -218,15 +225,17 @@ theoretical advances in models of pilot-abstractions
 (P*)~\cite{pstar}, which fundamentally supports and promotes both
 dynamic compute and data (access, storage, transfer) provisioning,
 which in turn builds upon the abstraction of affinity between
-distributed compute, data and computational resources. In summary, we
+distributed compute, data and computational resources\msnote{compute and
+computational?} \msnote{How about networking?}. In summary, we
 will use an abstractions-based and model-driven approach to provide
 well-defined capabilities by integrating application workload
-management and resource federation layers.
+management and resource federation layers\msnote{I dont think we want to be
+intergrating them, do we?}.
 
 \noindent {\bf Project Impact:} In addition to the DOE relevant
 applications alluded to, our middleware developments will support the
 execution requirements of novel, high-performance, data-intensive
-analysis libraries (think BigData equivalents to PETSc), as well as
+analysis libraries (think BigData equivalents to PETSc) \msnote{ref?}, as well as
 provide the distributed and dynamic resource federation capabilities
 workflow systems can utilize.  The conceptual and analytical models we
 will develop, will offer both qualitative and quantitative insight for
