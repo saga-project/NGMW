@@ -136,21 +136,21 @@ approaches that require the coupling of exaflop computing to
 processing exabytes of data which are often distributed by nature, as
 well as the integration between single leadership machines and larger
 number of less powerful machines. The importance of DEC has been noted
-in DOE reports~\cite{dmav-exa}, as well as the International Exascale
+in DoE reports~\cite{dmav-exa}, as well as the International Exascale
 Software Project Roadmap~\cite{iespr}.
 
 %Ref~\cite{iespr} identifies support for external environments as a
 %core function of systems management.
 
 Supercomputing class applications as those under development for the
-Square Kilometer Array, the Large Synoptic Survey Telescope
-(LSST), or for the next generation of combustion, high-energy physics
+Square Kilometer Array, the Large Synoptic Survey Telescope (LSST), or
+for the next generation of combustion, high-energy physics
 (e.g. ATLAS) and bioinformatics are becoming increasingly complex,
 multi-component, and reliant upon federating distributed data sources
-in workflows that span machine size and scales.  In this scenario, the
-federation of single leadership machines and larger number of less
+in workflows that span machine types and scales.  In this scenario,
+the federation of single leadership machines and larger number of less
 powerful machines is necessary to promote efficient resource
-utilization.  In addition to computational science applications, DOE
+utilization.  In addition to computational science applications, DoE
 experimental facilities (e.g., Advanced Photon Source) are emerging as
 other major source of data (often at rates of hundreds of terabytes
 per day).  Scientific progress using these next-generation
@@ -223,7 +223,7 @@ will develop models for simplified (skeletal) applications, as well as
 models of workload generation and federation of resources.  Our model
 of an abstract distributed application (A*), will enable reasoning
 about decomposition of an application into well-defined and possibly
-correlated tasks. Analytical model (W*) which will be used to generate
+correlated tasks. An analytical model (W*) will be used to generate
 quantifiable workloads from these well-defined tasks.  A qualitative
 model of infrastructure (I*) will be based upon a set of capability
 units exposed by that infrastructure, \I{without} regards to its
@@ -233,7 +233,7 @@ federating infrastructure such that they provide well-defined
 collective capabilities.  Importantly these models will interface with
 each other -- syntactically and semantically, to guide multi-level
 reasoning to determine effective workload decomposition, distribution
-and placement.  Our work will build upon recent theoretical advances
+and performance.  Our work will build upon recent theoretical advances
 in models of pilot-abstractions (P*)~\cite{pstar}, which fundamentally
 supports and promotes both dynamic compute and data (access, storage,
 transfer) provisioning, which in turn builds upon the abstraction of
