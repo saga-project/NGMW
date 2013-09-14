@@ -26,7 +26,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2013-09-14 00:37:45 -0400</string>
+	<string>2013-09-14 00:40:58 -0400</string>
 	<key>Modifier</key>
 	<string>Shantenu Jha</string>
 	<key>NotesVisible</key>
@@ -3668,6 +3668,10 @@
 			<dict/>
 			<key>HPages</key>
 			<integer>3</integer>
+			<key>HorizontalGuides</key>
+			<array>
+				<real>-107</real>
+			</array>
 			<key>KeepToScale</key>
 			<false/>
 			<key>Layers</key>
