@@ -59,6 +59,43 @@
 			<key>Head</key>
 			<dict>
 				<key>ID</key>
+				<integer>193</integer>
+			</dict>
+			<key>ID</key>
+			<integer>197</integer>
+			<key>Points</key>
+			<array>
+				<string>{316.77154541015619, 396.85039329528803}</string>
+				<string>{316.77154541015619, 416.69290161132812}</string>
+			</array>
+			<key>Style</key>
+			<dict>
+				<key>stroke</key>
+				<dict>
+					<key>HeadArrow</key>
+					<string>FilledArrow</string>
+					<key>Legacy</key>
+					<true/>
+					<key>LineType</key>
+					<integer>1</integer>
+					<key>TailArrow</key>
+					<string>0</string>
+				</dict>
+			</dict>
+			<key>Tail</key>
+			<dict>
+				<key>ID</key>
+				<integer>192</integer>
+				<key>Info</key>
+				<integer>4</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>Class</key>
+			<string>LineGraphic</string>
+			<key>Head</key>
+			<dict>
+				<key>ID</key>
 				<integer>189</integer>
 			</dict>
 			<key>ID</key>
@@ -78,7 +115,7 @@
 					<key>Legacy</key>
 					<true/>
 					<key>TailArrow</key>
-					<string>0</string>
+					<string>FilledArrow</string>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -216,6 +253,7 @@
 				<string>{0.13279510893331425, -0.50000000000000178}</string>
 				<string>{-0.13357912543911277, -0.50000000000000178}</string>
 				<string>{-0.5, -1.7763568394002505e-15}</string>
+				<string>{-1.1102230246251565e-16, -0.50000000000000178}</string>
 			</array>
 			<key>Shape</key>
 			<string>Rectangle</string>
@@ -226,11 +264,11 @@
 					<key>Color</key>
 					<dict>
 						<key>b</key>
-						<string>0.933333</string>
+						<string>0.8</string>
 						<key>g</key>
-						<string>0.933333</string>
+						<string>0.8</string>
 						<key>r</key>
-						<string>0.933333</string>
+						<string>0.8</string>
 					</dict>
 				</dict>
 			</dict>
@@ -257,6 +295,7 @@
 				<string>{0.13279510893331425, -0.50000000000000178}</string>
 				<string>{-0.13357912543911277, -0.50000000000000178}</string>
 				<string>{-1.1102230246251565e-16, -0.5}</string>
+				<string>{-1.1102230246251565e-16, 0.49999999999999822}</string>
 			</array>
 			<key>Shape</key>
 			<string>Rectangle</string>
@@ -312,7 +351,7 @@
 					<key>LineType</key>
 					<integer>1</integer>
 					<key>TailArrow</key>
-					<string>0</string>
+					<string>FilledArrow</string>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -351,7 +390,7 @@
 					<key>LineType</key>
 					<integer>1</integer>
 					<key>TailArrow</key>
-					<string>0</string>
+					<string>FilledArrow</string>
 				</dict>
 			</dict>
 			<key>Tail</key>
@@ -1150,11 +1189,11 @@ Scheduler}</string>
 					<key>Color</key>
 					<dict>
 						<key>b</key>
-						<string>0.561757</string>
+						<string>0.8</string>
 						<key>g</key>
-						<string>0.910973</string>
+						<string>0.8</string>
 						<key>r</key>
-						<string>0.666661</string>
+						<string>0.8</string>
 					</dict>
 				</dict>
 			</dict>
@@ -1588,7 +1627,7 @@ Applications}</string>
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2013-09-16 15:21:19 +0000</string>
+	<string>2013-09-16 15:33:19 +0000</string>
 	<key>Modifier</key>
 	<string>Matteo</string>
 	<key>NotesVisible</key>
